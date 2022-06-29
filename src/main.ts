@@ -1,5 +1,18 @@
 import './style.css'
 
+type emails = {
+  from: string;
+  header: string;
+  content: string;
+  emailAddress: string;
+  img: string;
+  read: boolean;
+}
+
+type state = {
+  email: emails[]
+}
+
 const state = {
   emails: [
     {
@@ -29,7 +42,55 @@ const state = {
       emailAddress: 'government@email.com',
       img: 'assets/gov.jpg',
       read: false
-    }
+    },
+  
     // feel free to add more emails here
   ]
 }
+
+// <ul class="emails-list">
+//   <li class="emails-list__item">
+//     <span class="emails-list__item__read-icon material-symbols-outlined">
+//       mark_email_unread
+//     </span>
+//     <img class="emails-list__item__image" src="assets/nico.JPG" />
+//     <p class="emails-list__item__from">Nico</p>
+//     <p class="emails-list__item__content">
+//       Link to today's video and slides is up!
+//     </p>
+//   </li>
+// </ul>
+
+
+
+function renderEmails() {
+
+  let emailUl = document.querySelector('.emails-list')
+  emailUl.textContent = ''
+
+  for ( let email of state.emails) {
+
+    let ulEl = document.createElement('ul')
+  ulEl.className = 'emails-list'
+  
+  let liEl = document.createElement('li')
+  ulEl.append(liEl)
+
+  let spanEl = document.createElement('span')
+  
+  let imgEl = document.createElement('img')
+  imgEl.src 
+
+  let pFromEl = document.createElement('p')
+   
+
+  let pContentEl = document.createElement('p')
+  liEl.append(spanEl, imgEl, pFromEl, pContentEl,)
+  }
+  
+}
+render() {
+renderEmails()
+}
+
+render()
