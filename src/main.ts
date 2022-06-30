@@ -89,7 +89,7 @@ function renderEmails() {
   }
   
 }
-render() {
+function render() {
 renderEmails()
 }
 
